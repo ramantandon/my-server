@@ -20,9 +20,9 @@ jobs:
       - name: Run code linting and tests
         run: |
           echo "Simulating code check: linting and unit tests..."
-          apt update -y 
-          apt install -y nodejs 
-          apt install -y npm
+          sudo apt update -y 
+          sudo apt install -y nodejs 
+          sudo apt install -y npm
           npm install inquirer -g
           npm install eslint -g
           npm run lint
