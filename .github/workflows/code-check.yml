@@ -1,0 +1,42 @@
+name: Code Checker
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    branches:
+      - main
+      - development
+
+jobs:
+  check-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Run code linting and tests
+        run: |
+          echo "Simulating code check: linting and unit tests..."
+          apt update -y 
+          apt install -y nodejs 
+          apt install -y npm
+          npm install inquirer -g
+          npm install eslint -g
+          npm run lint
+          npm test
+          echo "Code check complete."
+          # If your commands fail (exit with a non-zero code), the job will automatically fail.
+
+      - name: Report status
+        # This step runs only if the previous steps succeeded (default behavior)
+        run: echo "All checks passed successfully!"
+        if: success()
+
+      - name: Handle failure
+        # This step runs only if a previous step failed
+        run: echo "Code checks failed. Please review the errors above."
+        if: failure()
+
