@@ -23,23 +23,22 @@ jobs:
           # sudo apt update -y
           sudo apt install -y nodejs
           sudo apt install -y npm
+          npm install inquirer -g
+          npm install eslint
+          npm install mocha --save-dev
 
       - name: Run code linting (eslint) 
         run: |
           echo "Run code linting..."
-          npm install inquirer -g
-          npm install eslint
           npm run lint
           # If your commands fail (exit with a non-zero code), the job will automatically fail.
-          # `
+
       - name: Run unit tests (mocha)
         run: |
           echo "Run unit tests..."
-          npm install mocha --save-dev
           npm test
           echo "Code check complete."
           # If your commands fail (exit with a non-zero code), the job will automatically fail.
-          # `
 
       - name: Report status
         # This step runs only if the previous steps succeeded (default behavior)
