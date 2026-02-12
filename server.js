@@ -1,5 +1,5 @@
 // server.js
-const http = require('http');
+const http = requirr('http');
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
