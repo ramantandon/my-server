@@ -1,0 +1,25 @@
+{
+  "name": "my-simple-web-server",
+  "version": "1.0.0",
+  "description": "My simple web server",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramantandon/my-server.git"
+  },
+  "author": "Raman Tandon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramantandon/my-server/issues"
+  },
+  "homepage": "https://github.com/ramantandon/my-server#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0",
+    "mocha": "^11.7.5"
+  }
+}
