@@ -24,8 +24,9 @@ jobs:
           sudo apt install -y nodejs 
           sudo apt install -y npm
           npm install inquirer -g
-          npm install eslint -g
+          npm install eslint
           npm run lint
+          npm install mocha --save-dev
           npm test
           echo "Code check complete."
           # If your commands fail (exit with a non-zero code), the job will automatically fail.
